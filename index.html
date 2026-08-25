@@ -399,36 +399,40 @@
         window.onload = calculate;
     </script>
     <!-- ========================================== -->
-        <!-- เพิ่มเติม: ส่วนแสดงภาพ 3 มิติ / ทัศนียภาพโครงการ -->
+        <!-- เพิ่มเติม: ส่วนข้อเสนอสำหรับผู้ร่วมลงทุน (Investor Proposal) -->
         <!-- ========================================== -->
-        <div class="card" style="margin-top: 24px;">
-            <h2>🏢 จำลองภาพ 3 มิติและทัศนียภาพโครงการ</h2>
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">ตัวอย่างมุมมองการจัดวางพื้นที่สนามแบดมินตัน โครงสร้างอาคาร และสิ่งอำนวยความสะดวก</p>
+        <div class="card" style="margin-top: 24px; border-top: 4px solid var(--accent);">
+            <h2>🤝 โอกาสร่วมลงทุนและผลตอบแทนสำหรับพาร์ทเนอร์ (Investment Proposal)</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">ร่วมเป็นส่วนหนึ่งของธุรกิจสนามแบดมินตันมาตรฐานใจกลางเชียงใหม่ ธุรกิจกระแสเงินสดสูงและเติบโตต่อเนื่องตามเทรนด์สุขภาพ</p>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-                <!-- ภาพที่ 1: มุมมองภายนอก -->
-                <div style="border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: #fff;">
-                    <div style="height: 220px; background: #e2e8f0; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
-                        <!-- คำแนะนำ: หากมีรูปเรนเดอร์จริง ให้เปลี่ยนแท็ก span ด้านล่างเป็น <img src="ชื่อไฟล์รูป.jpg" style="width:100%; height:100%; object-fit:cover;"> -->
-                        <span style="font-size: 0.9rem; text-align: center; padding: 10px;">[ พื้นที่ใส่รูป 3D มุมมองภายนอก / โครงสร้างอาคาร ]</span>
-                    </div>
-                    <div style="padding: 16px;">
-                        <h3 style="margin: 0 0 4px 0; font-size: 1.05rem; color: var(--primary-dark);">มุมมองด้านหน้าและลานจอดรถ</h3>
-                        <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">โครงสร้างเหล็กสูงโปร่ง หลังคาระบายความร้อน พร้อมลานจอดรถรองรับ 20-30 คัน</p>
-                    </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 24px;">
+                <!-- จุดเด่นที่ 1 -->
+                <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border: 1px solid var(--border);">
+                    <div style="font-size: 1.5rem; margin-bottom: 8px;">💰</div>
+                    <h3 style="margin: 0 0 8px 0; font-size: 1.1rem; color: var(--primary-dark);">ผลตอบแทนคุ้มค่า (ROI & Dividend)</h3>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">คาดการณ์ปันผลสม่ำเสมอ อัตราผลตอบแทนต่อปี (IRR) น่าสนใจ พร้อมระยะเวลาคืนทุนที่ชัดเจนจากโมเดลธุรกิจที่พิสูจน์แล้ว</p>
                 </div>
 
-                <!-- ภาพที่ 2: มุมมองภายในสนาม -->
-                <div style="border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: #fff;">
-                    <div style="height: 220px; background: #e2e8f0; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
-                        <!-- คำแนะนำ: หากมีรูปเรนเดอร์จริง ให้เปลี่ยนแท็ก span ด้านล่างเป็น <img src="ชื่อไฟล์รูป.jpg" style="width:100%; height:100%; object-fit:cover;"> -->
-                        <span style="font-size: 0.9rem; text-align: center; padding: 10px;">[ พื้นที่ใส่รูป 3D ภายในคอร์ทแบดมินตัน ]</span>
-                    </div>
-                    <div style="padding: 16px;">
-                        <h3 style="margin: 0 0 4px 0; font-size: 1.05rem; color: var(--primary-dark);">มุมมองภายในคอร์ทและระบบไฟ</h3>
-                        <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">พื้นยางมาตรฐานสลับสี ระบบไฟ LED ส่องสว่างแบบไม่แยงตานักกีฬา</p>
-                    </div>
+                <!-- จุดเด่นที่ 2 -->
+                <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border: 1px solid var(--border);">
+                    <div style="font-size: 1.5rem; margin-bottom: 8px;">📈</div>
+                    <h3 style="margin: 0 0 8px 0; font-size: 1.1rem; color: var(--primary-dark);">กระแสเงินสดหมุนเวียนรายวัน</h3>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">โมเดลเก็บเงินสดล่วงหน้าจากการจองสนามและบริการเสริม (Pro Shop / เครื่องดื่ม) ลดความเสี่ยงเรื่องเครดิตเทอม</p>
                 </div>
+
+                <!-- จุดเด่นที่ 3 -->
+                <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border: 1px solid var(--border);">
+                    <div style="font-size: 1.5rem; margin-bottom: 8px;">📍</div>
+                    <h3 style="margin: 0 0 8px 0; font-size: 1.1rem; color: var(--primary-dark);">ทำเลศักยภาพสูงในเชียงใหม่</h3>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">ตั้งอยู่ในโซนชุมชนและกลุ่มคนรุ่นใหม่/วัยทำงานที่มีกำลังซื้อสูง ความต้องการใช้สนามแบดมินตันมีสูงกว่าปริมาณสนามในตลาด</p>
+                </div>
+            </div>
+
+            <!-- กล่องสรุปข้อเสนอพิเศษและช่องทางติดต่อ -->
+            <div style="background: linear-gradient(135deg, #fef3c7, #fde68a); border: 1px solid #fcd34d; border-radius: 8px; padding: 20px; text-align: center; color: #78350f;">
+                <h3 style="margin: 0 0 8px 0; font-size: 1.2rem;">🌟 เปิดรับพาร์ทเนอร์ร่วมทุน (Limited Partnership Slots)</h3>
+                <p style="margin: 0 0 16px 0; font-size: 0.95rem;">สำหรับผู้ที่สนใจร่วมลงทุนหรือต้องการขอรับเอกสารแผนธุรกิจฉบับเต็ม (Pitch Deck) สามารถนัดหมายพูดคุยรายละเอียดได้ทันที</p>
+                <a href="mailto:your-email@example.com" style="display: inline-block; background: #92400e; color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">📩 ติดต่อเพื่อขอรับแผนการลงทุนฉบับเต็ม</a>
             </div>
         </div>
 </body>
