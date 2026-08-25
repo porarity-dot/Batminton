@@ -398,35 +398,38 @@
         // รันคำนวณครั้งแรกตอนโหลดหน้าเว็บ
         window.onload = calculate;
     </script>
-    <!-- เพิ่มการ์ดแสดงภาพ 3 มิติของโครงการ -->
-<div class="card" style="grid-column: 1 / -1;">
-    <h2>🏢 จำลองภาพ 3 มิติและทัศนียภาพโครงการ</h2>
-    <p style="color: var(--text-muted); margin-bottom: 1rem;">ตัวอย่างมุมมองการจัดวางพื้นที่สนามแบดมินตันและสิ่งอำนวยความสะดวก</p>
-    
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
-        <!-- ภาพที่ 1: มุมมองภายนอก -->
-        <div style="border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: #fff;">
-            <div style="height: 200px; background: #e2e8f0; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
-                <!-- แทนที่ด้วยแท็ก <img src="url-รูปภาพของคุณ.jpg" style="width:100%; height:100%; object-fit:cover;"> -->
-                <span>[ พื้นที่ใส่รูป 3D มุมมองภายนอก/อาคาร ]</span>
-            </div>
-            <div style="padding: 16px;">
-                <h3 style="margin: 0 0 4px 0; font-size: 1rem; color: var(--primary-dark);">มุมมองด้านหน้าและลานจอดรถ</h3>
-                <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted);">โครงสร้างเหล็กสูงโปร่ง หลังคาระบายความร้อน พร้อมลานจอดรถรองรับ 20-30 คัน</p>
-            </div>
-        </div>
+    <!-- ========================================== -->
+        <!-- เพิ่มเติม: ส่วนแสดงภาพ 3 มิติ / ทัศนียภาพโครงการ -->
+        <!-- ========================================== -->
+        <div class="card" style="margin-top: 24px;">
+            <h2>🏢 จำลองภาพ 3 มิติและทัศนียภาพโครงการ</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">ตัวอย่างมุมมองการจัดวางพื้นที่สนามแบดมินตัน โครงสร้างอาคาร และสิ่งอำนวยความสะดวก</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <!-- ภาพที่ 1: มุมมองภายนอก -->
+                <div style="border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: #fff;">
+                    <div style="height: 220px; background: #e2e8f0; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
+                        <!-- คำแนะนำ: หากมีรูปเรนเดอร์จริง ให้เปลี่ยนแท็ก span ด้านล่างเป็น <img src="ชื่อไฟล์รูป.jpg" style="width:100%; height:100%; object-fit:cover;"> -->
+                        <span style="font-size: 0.9rem; text-align: center; padding: 10px;">[ พื้นที่ใส่รูป 3D มุมมองภายนอก / โครงสร้างอาคาร ]</span>
+                    </div>
+                    <div style="padding: 16px;">
+                        <h3 style="margin: 0 0 4px 0; font-size: 1.05rem; color: var(--primary-dark);">มุมมองด้านหน้าและลานจอดรถ</h3>
+                        <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">โครงสร้างเหล็กสูงโปร่ง หลังคาระบายความร้อน พร้อมลานจอดรถรองรับ 20-30 คัน</p>
+                    </div>
+                </div>
 
-        <!-- ภาพที่ 2: มุมมองภายในสนาม -->
-        <div style="border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: #fff;">
-            <div style="height: 200px; background: #e2e8f0; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
-                <span>[ พื้นที่ใส่รูป 3D ภายในคอร์ทแบด ]</span>
-            </div>
-            <div style="padding: 16px;">
-                <h3 style="margin: 0 0 4px 0; font-size: 1rem; color: var(--primary-dark);">มุมมองภายในคอร์ทและระบบไฟ</h3>
-                <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted);">พื้นยางมาตรฐานสลับสี ระบบไฟ LED ส่องสว่างแบบไม่แยงตานักกีฬา</p>
+                <!-- ภาพที่ 2: มุมมองภายในสนาม -->
+                <div style="border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: #fff;">
+                    <div style="height: 220px; background: #e2e8f0; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
+                        <!-- คำแนะนำ: หากมีรูปเรนเดอร์จริง ให้เปลี่ยนแท็ก span ด้านล่างเป็น <img src="ชื่อไฟล์รูป.jpg" style="width:100%; height:100%; object-fit:cover;"> -->
+                        <span style="font-size: 0.9rem; text-align: center; padding: 10px;">[ พื้นที่ใส่รูป 3D ภายในคอร์ทแบดมินตัน ]</span>
+                    </div>
+                    <div style="padding: 16px;">
+                        <h3 style="margin: 0 0 4px 0; font-size: 1.05rem; color: var(--primary-dark);">มุมมองภายในคอร์ทและระบบไฟ</h3>
+                        <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">พื้นยางมาตรฐานสลับสี ระบบไฟ LED ส่องสว่างแบบไม่แยงตานักกีฬา</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
 </body>
 </html>
