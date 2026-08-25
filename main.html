@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบวางแผนและวิเคราะห์การลงทุนสนามแบดมินตัน เชียงใหม่</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap');
+        
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0f766e;
+            --primary-dark: #115e59;
+            --accent: #f59e0b;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --radius: 12px;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: white;
+            padding: 2.5rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0 0 0.5rem 0;
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: -30px auto 40px auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 24px;
+        }
+
+        @media (max-width: 900px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 24px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+            margin-bottom: 24px;
+        }
+
+        .card h2 {
+            font-size: 1.25rem;
+            margin-top: 0;
+            margin-bottom: 1.25rem;
+            color: var(--primary-dark);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+            color: var(--text-main);
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: 'Prompt', sans-serif;
+            font-size: 1rem;
+            background: #fff;
+            transition: all 0.2s;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.15);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary);
+        }
+
+        .stat-card.accent::before {
+            background: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .stat-value {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .stat-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background-color: #f1f5f9;
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        tr:hover td {
+            background-color: #f8fafc;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            background: #e0f2fe;
+            color: #0369a1;
+        }
+
+        .badge-success {
+            background: #dcfce7;
+            color: #15803d;
+        }
+
+        .highlight-box {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 20px;
+            color: #166534;
+        }
+
+        .highlight-box h3 {
+            margin: 0 0 8px 0;
+            font-size: 1.05rem;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>ระบบคำนวณแผนธุรกิจสนามแบดมินตัน</h1>
+        <p>เชียงใหม่ | จำลองงบลงทุน รายได้ และจุดคุ้มทุนแบบเรียลไทม์</p>
+    </header>
+
+    <div class="container">
+        <div class="dashboard-grid">
+            <!-- ส่วนตั้งค่าพารามิเตอร์ -->
+            <div class="card">
+                <h2>⚙️ ปรับแต่งตัวแปรการลงทุน</h2>
+                <div class="form-group">
+                    <label for="courts">จำนวนคอร์ท (สนาม)</label>
+                    <input type="number" id="courts" value="6" min="2" max="20" oninput="calculate()">
+                </div>
+                <div class="form-group">
+                    <label for="costPerCourt">งบสร้างต่อคอร์ท (บาท)</label>
+                    <input type="number" id="costPerCourt" value="1500000" step="100000" oninput="calculate()">
+                </div>
+                <div class="form-group">
+                    <label for="hourlyRate">ค่าเช่าเฉลี่ย (บาท/ชม./คอร์ท)</label>
+                    <input type="number" id="hourlyRate" value="220" step="10" oninput="calculate()">
+                </div>
+                <div class="form-group">
+                    <label for="hoursPerDay">ชั่วโมงใช้งานเฉลี่ยต่อวัน/คอร์ท</label>
+                    <input type="number" id="hoursPerDay" value="6" min="1" max="14" step="0.5" oninput="calculate()">
+                </div>
+                <div class="form-group">
+                    <label for="monthlyExp">ค่าใช้จ่ายดำเนินการ/เดือน (บาท)</label>
+                    <input type="number" id="monthlyExp" value="110000" step="5000" oninput="calculate()">
+                </div>
+                <div class="form-group">
+                    <label for="otherIncome">รายได้เสริมต่อเดือน (ร้านค้า/น้ำ/อุปกรณ์)</label>
+                    <input type="number" id="otherIncome" value="40000" step="5000" oninput="calculate()">
+                </div>
+            </div>
+
+            <!-- ส่วนแสดงผลสรุปและตาราง -->
+            <div>
+                <!-- สรุปตัวเลขสำคัญ -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-label">งบลงทุนเบื้องต้นรวม</div>
+                        <div class="stat-value" id="totalInvest">0</div>
+                        <div class="stat-desc">ไม่รวมค่าจัดซื้อที่ดิน</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">รายได้สุทธิ / เดือน</div>
+                        <div class="stat-value" id="netProfitMonth" style="color: #0f766e;">0</div>
+                        <div class="stat-desc" id="profitMargin">อัตรากำไร ...%</div>
+                    </div>
+                    <div class="stat-card accent">
+                        <div class="stat-label">ระยะเวลาคืนทุน (Payback)</div>
+                        <div class="stat-value" id="paybackPeriod">0</div>
+                        <div class="stat-desc">ปี (ประมาณการ)</div>
+                    </div>
+                </div>
+
+                <!-- ตารางรายละเอียดงบประมาณโครงสร้าง -->
+                <div class="card">
+                    <h2>📊 รายละเอียดโครงสร้างงบลงทุนเบื้องต้น</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>รายการค่าใช้จ่าย</th>
+                                <th class="text-right">สัดส่วนงบประมาณ (บาท)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="budgetBreakdownTable">
+                            <!-- จะถูกเติมด้วย Javascript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ข้อเสนอแนะเชิงกลยุทธ์ -->
+                <div class="highlight-box">
+                    <h3>💡 คำแนะนำสำหรับทำเลเชียงใหม่</h3>
+                    <p id="recommendationText">กำลังวิเคราะห์ข้อมูล...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function formatNumber(num) {
+            return num.toLocaleString('th-TH', { maximumFractionDigits: 0 });
+        }
+
+        function calculate() {
+            // ดึงค่าจากฟอร์ม
+            const courts = parseFloat(document.getElementById('courts').value) || 0;
+            const costPerCourt = parseFloat(document.getElementById('costPerCourt').value) || 0;
+            const hourlyRate = parseFloat(document.getElementById('hourlyRate').value) || 0;
+            const hoursPerDay = parseFloat(document.getElementById('hoursPerDay').value) || 0;
+            const monthlyExp = parseFloat(document.getElementById('monthlyExp').value) || 0;
+            const otherIncome = parseFloat(document.getElementById('otherIncome').value) || 0;
+
+            // คำนวนงบลงทุนรวม
+            const buildingInfra = courts * costPerCourt;
+            const extraFacilities = 1000000; // ค่าส่วนกลาง ห้องน้ำ สำนักงาน ลานจอดรถ
+            const totalInvest = buildingInfra + extraFacilities;
+
+            // คำนวนรายได้ต่อเดือน (คิด 30 วัน)
+            const courtRevenueDaily = courts * hoursPerDay * hourlyRate;
+            const courtRevenueMonth = courtRevenueDaily * 30;
+            const totalRevenueMonth = courtRevenueMonth + otherIncome;
+
+            // กำไรสุทธิต่อเดือนและต่อปี
+            const netProfitMonth = totalRevenueMonth - monthlyExp;
+            const netProfitYear = netProfitMonth * 12;
+
+            // ระยะเวลาคืนทุน (ปี)
+            let paybackYears = netProfitYear > 0 ? (totalInvest / netProfitYear) : 99;
+
+            // อัตรากำไรสุทธิ
+            const profitMargin = totalRevenueMonth > 0 ? (netProfitMonth / totalRevenueMonth) * 100 : 0;
+
+            // แสดงผลลัพธ์หลัก
+            document.getElementById('totalInvest').innerText = formatNumber(totalInvest) + ' ฿';
+            document.getElementById('netProfitMonth').innerText = formatNumber(netProfitMonth) + ' ฿';
+            document.getElementById('profitMargin').innerText = `อัตรากำไรสุทธิ ${profitMargin.toFixed(1)}% ของรายได้`;
+            document.getElementById('paybackPeriod').innerText = paybackYears.toFixed(1);
+
+            // เติมตารางสัดส่วนงบประมาณ
+            const tableBody = document.getElementById('budgetBreakdownTable');
+            tableBody.innerHTML = `
+                <tr>
+                    <td>โครงสร้างอาคาร โครงหลังคา และงานเหล็ก</td>
+                    <td class="text-right">${formatNumber(buildingInfra * 0.55)} ฿</td>
+                </tr>
+                <tr>
+                    <td>งานพื้นคอนกรีตและพื้นยางสนามมาตรฐาน (${courts} คอร์ท)</td>
+                    <td class="text-right">${formatNumber(buildingInfra * 0.30)} ฿</td>
+                </tr>
+                <tr>
+                    <td>ระบบไฟส่องสว่างสนามและระบบไฟฟ้าภายใน</td>
+                    <td class="text-right">${formatNumber(buildingInfra * 0.15)} ฿</td>
+                </tr>
+                <tr>
+                    <td>งานสถาปัตยกรรม ห้องน้ำ สำนักงาน และลานจอดรถ</td>
+                    <td class="text-right">${formatNumber(extraFacilities)} ฿</td>
+                </tr>
+                <tr style="font-weight: bold; background: #f8fafc;">
+                    <td>รวมงบลงทุนทั้งสิ้น</td>
+                    <td class="text-right" style="color: var(--primary);">${formatNumber(totalInvest)} ฿</td>
+                </tr>
+            `;
+
+            // คำแนะนำตามขนาด
+            let rec = "";
+            if (courts <= 4) {
+                rec = `ขนาด ${courts} คอร์ท เหมาะสำหรับพื้นที่ชุมชนรอบนอกเชียงใหม่ (เช่น สันทราย, แม่ริม, สารภี) ควบคุมงบประมาณได้ง่าย ดูแลบริหารจัดการคนเดีย้างหรือใช้พนักงานน้อย เน้นสร้างคอมมูนิตี้กลุ่มเพื่อนฝูงและก๊วนตีประจำ`;
+            } else if (courts <= 8) {
+                rec = `ขนาด ${courts} คอร์ท เป็นขนาดมาตรฐานที่คุ้มค่าที่สุดในเชียงใหม่ รองรับการจัดแข่งย่อยและกลุ่มก๊วนใหญ่ได้ดี แนะนำให้เสริมบริการ Pro Shop และเครื่องดื่มอัตโนมัติหรือคาเฟ่เล็กๆ เพื่อเพิ่มกระแสเงินสด`;
+            } else {
+                rec = `ขนาด ${courts} คอร์ทรองรับทัวร์นาเมนต์ใหญ่และมีความเป็นมืออาชีพสูง เหมาะกับทำเลใกล้เมืองหรือย่านมหาวิทยาลัยที่มีผู้เล่นหนาแน่น ควรบริหารจัดการรอบจองผ่านระบบออนไลน์เพื่อลดความผิดพลาด`;
+            }
+            document.getElementById('recommendationText').innerText = rec;
+        }
+
+        // รันคำนวณครั้งแรกตอนโหลดหน้าเว็บ
+        window.onload = calculate;
+    </script>
+</body>
+</html>
